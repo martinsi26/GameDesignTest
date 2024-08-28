@@ -1,9 +1,6 @@
 extends Node2D
 
-var messages = [
-	"You Have Found A Key!", 
-	"Press 'E' To Pick It Up"
-]
+var messages = []
 
 var typing_speed = .05
 var read_time = 1.5

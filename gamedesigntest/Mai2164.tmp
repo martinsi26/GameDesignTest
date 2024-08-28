@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://buviciv54qlci"]
+
+[ext_resource type="Script" path="res://Main.gd" id="1_5uorg"]
+[ext_resource type="PackedScene" uid="uid://djyrn5uuqne6m" path="res://Cat.tscn" id="2_qckuc"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_5uorg")
+
+[node name="Cat" parent="." instance=ExtResource("2_qckuc")]
+top_level = true
+
+[connection signal="enter_room1" from="Cat" to="." method="_on_cat_enter_room_1"]
+[connection signal="enter_room2" from="Cat" to="." method="_on_cat_enter_room_2"]
