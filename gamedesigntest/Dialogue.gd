@@ -24,7 +24,7 @@ func start_dialogue():
 	$NextChar.start()
 
 func stop_dialogue():
-	#get_parent().remove_child(self)
+	get_parent().remove_child(self)
 	queue_free()
 
 func _on_next_char_timeout():
