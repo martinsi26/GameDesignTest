@@ -2,7 +2,9 @@ extends CharacterBody2D
 
 var dialogue = preload("res://Dialogue.tscn")
 var speed = 500
-#var screen_size = Vector2.ZERO
+
+var push_force = 40
+
 var collected_key = false
 var found_key = false
 var on_key = false
@@ -19,13 +21,10 @@ signal enter_room2
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#screen_size = get_viewport_rect().size
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-
-		
 	var direction = Input.get_vector("Move_Left", "Move_Right", "Move_Up", "Move_Down")
 	
 	if direction.x == 0 and direction.y == 0:
@@ -44,9 +43,11 @@ func _physics_process(delta: float) -> void:
 		
 	velocity = direction * speed
 	move_and_slide()
-	#position += direction * speed * delta
-	#position.x = clamp(position.x, 0, screen_size.x)
-	#position.y = clamp(position.y, 0, screen_size.y)
+	
+	for i in get_slide_collision_count():
+		var c = get_slide_collision(i)
+		if c.get_collider() is RigidBody2D:
+			c.get_collider().apply_central_impulse(-c.get_normal() * push_force)
 		
 func pick_up():
 	collected_key = true

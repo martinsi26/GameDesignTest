@@ -9,28 +9,28 @@ size = Vector2(24, 702)
 [node name="Walls" type="Node2D"]
 
 [node name="Wall1" type="StaticBody2D" parent="."]
-collision_mask = 2
+collision_mask = 34
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall1"]
 position = Vector2(576, -18)
 shape = SubResource("RectangleShape2D_p74i1")
 
 [node name="Wall2" type="StaticBody2D" parent="."]
-collision_mask = 2
+collision_mask = 34
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2"]
 position = Vector2(-12, 321)
 shape = SubResource("RectangleShape2D_a4m37")
 
 [node name="Wall3" type="StaticBody2D" parent="."]
-collision_mask = 2
+collision_mask = 34
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall3"]
 position = Vector2(574, 666)
 shape = SubResource("RectangleShape2D_p74i1")
 
 [node name="Wall4" type="StaticBody2D" parent="."]
-collision_mask = 2
+collision_mask = 34
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall4"]
 position = Vector2(1164, 323)

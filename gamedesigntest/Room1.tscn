@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dhy8dcss10h4v"]
+[gd_scene load_steps=6 format=3 uid="uid://dhy8dcss10h4v"]
 
 [ext_resource type="PackedScene" uid="uid://cae3r1r6s8668" path="res://Key.tscn" id="1_2t7jq"]
 [ext_resource type="Texture2D" uid="uid://cs7wlursimth0" path="res://Forest.webp" id="1_dsfd4"]
 [ext_resource type="PackedScene" uid="uid://kprgr5v6cgd0" path="res://Walls.tscn" id="3_12gq2"]
+[ext_resource type="PackedScene" uid="uid://e6upg4qhiox1" path="res://Yarn.tscn" id="4_v4516"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_57p6s"]
 size = Vector2(20, 120)
@@ -35,3 +36,6 @@ position = Vector2(548, 245)
 position = Vector2(1103, 171)
 
 [node name="Walls" parent="." instance=ExtResource("3_12gq2")]
+
+[node name="Yarn" parent="." instance=ExtResource("4_v4516")]
+position = Vector2(758, 320)

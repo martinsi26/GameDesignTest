@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bn5qnvoeoubqe"]
+[gd_scene load_steps=6 format=3 uid="uid://bn5qnvoeoubqe"]
 
 [ext_resource type="Texture2D" uid="uid://cs7wlursimth0" path="res://Forest.webp" id="1_m8ybh"]
 [ext_resource type="PackedScene" uid="uid://b620qggaey1vk" path="res://Chest.tscn" id="2_6l1to"]
 [ext_resource type="PackedScene" uid="uid://kprgr5v6cgd0" path="res://Walls.tscn" id="3_evuxi"]
+[ext_resource type="PackedScene" uid="uid://e6upg4qhiox1" path="res://Yarn.tscn" id="4_5c5uh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v4n1v"]
 size = Vector2(20, 120)
@@ -32,10 +33,12 @@ theme_override_font_sizes/font_size = 100
 text = "This is room 2"
 
 [node name="Spawn2" type="Marker2D" parent="."]
-position = Vector2(44, 164)
+position = Vector2(58, 164)
 
 [node name="Chest" parent="." instance=ExtResource("2_6l1to")]
 position = Vector2(843, 307)
-collision_layer = 16
 
 [node name="Walls" parent="." instance=ExtResource("3_evuxi")]
+
+[node name="Yarn" parent="." instance=ExtResource("4_5c5uh")]
+position = Vector2(489, 247)

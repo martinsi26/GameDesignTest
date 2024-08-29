@@ -1,34 +1,106 @@
-[gd_scene load_steps=5 format=3 uid="uid://djyrn5uuqne6m"]
+[gd_scene load_steps=12 format=3 uid="uid://djyrn5uuqne6m"]
 
 [ext_resource type="Texture2D" uid="uid://dq6kbb1pt7si1" path="res://Cat.webp" id="1_8bf7c"]
 [ext_resource type="Script" path="res://Cat.gd" id="1_k6c7m"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tyf70"]
-radius = 32.5
-height = 100.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_140bi"]
+radius = 4.12311
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_65smy"]
+radius = 31.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jklp7"]
+radius = 8.0
+height = 22.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3fsua"]
+size = Vector2(35.5, 35)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hglok"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5au8x"]
+radius = 5.09902
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qbdyb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_srebf"]
+radius = 5.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2ubx4"]
-radius = 44.0
+radius = 46.0
 height = 122.0
 
 [node name="Cat" type="CharacterBody2D"]
 collision_layer = 2
-collision_mask = 17
+collision_mask = 113
 script = ExtResource("1_k6c7m")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_8bf7c")
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-20, 46)
+shape = SubResource("CircleShape2D_140bi")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(17, 45)
+shape = SubResource("CircleShape2D_140bi")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 0)
-shape = SubResource("CapsuleShape2D_tyf70")
+position = Vector2(-1, -7)
+shape = SubResource("CircleShape2D_65smy")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2(-21, -38)
+shape = SubResource("CapsuleShape2D_jklp7")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="."]
+position = Vector2(20, -37)
+shape = SubResource("CapsuleShape2D_jklp7")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="."]
+position = Vector2(-0.75, 31.5)
+shape = SubResource("RectangleShape2D_3fsua")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="."]
+position = Vector2(13, 33)
+shape = SubResource("CircleShape2D_hglok")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="."]
+position = Vector2(14, 22)
+shape = SubResource("CircleShape2D_5au8x")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="."]
+position = Vector2(-16, 22)
+shape = SubResource("CircleShape2D_5au8x")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="."]
+position = Vector2(-15, 33)
+shape = SubResource("CircleShape2D_qbdyb")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="."]
+position = Vector2(-28, 33)
+shape = SubResource("CircleShape2D_srebf")
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="."]
+position = Vector2(-34, 29)
+shape = SubResource("CircleShape2D_srebf")
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="."]
+position = Vector2(-37, 23)
+shape = SubResource("CircleShape2D_srebf")
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="."]
+position = Vector2(-37, 15)
+shape = SubResource("CircleShape2D_srebf")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 4
 collision_mask = 56
 
 [node name="Hitbox" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -1)
 shape = SubResource("CapsuleShape2D_2ubx4")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
