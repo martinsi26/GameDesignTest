@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var dialogue = preload("res://Dialogue.tscn")
-var speed = 500
+var speed = 200
 
 var push_force = 40
 
