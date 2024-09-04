@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://bn5qnvoeoubqe"]
+
+[ext_resource type="Texture2D" uid="uid://cs7wlursimth0" path="res://Assets/Forest.webp" id="1_564ua"]
+[ext_resource type="PackedScene" uid="uid://b620qggaey1vk" path="res://Scene/Chest.tscn" id="2_ixxw5"]
+[ext_resource type="PackedScene" uid="uid://kprgr5v6cgd0" path="res://Scene/Walls.tscn" id="3_6brev"]
+[ext_resource type="PackedScene" uid="uid://e6upg4qhiox1" path="res://Scene/Yarn.tscn" id="4_7gn4i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v4n1v"]
+size = Vector2(20, 120)
+
+[node name="Room2" type="Node2D"]
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_564ua")
+expand_mode = 3
+
+[node name="Path1Back" type="StaticBody2D" parent="."]
+collision_layer = 32
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path1Back"]
+position = Vector2(-6, 160)
+shape = SubResource("RectangleShape2D_v4n1v")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 221.0
+offset_top = -30.0
+offset_right = 1074.0
+offset_bottom = 107.0
+theme_override_font_sizes/font_size = 100
+text = "This is room 2"
+
+[node name="Spawn2" type="Marker2D" parent="."]
+position = Vector2(58, 164)
+
+[node name="Chest" parent="." instance=ExtResource("2_ixxw5")]
+position = Vector2(843, 307)
+
+[node name="Walls" parent="." instance=ExtResource("3_6brev")]
+
+[node name="Yarn" parent="." instance=ExtResource("4_7gn4i")]
+position = Vector2(489, 247)
